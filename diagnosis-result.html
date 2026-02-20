@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado do Diagnóstico - AutoLand</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <header class="header">
+        <div class="container-header">
+            <div class="logo">
+                <h1>AutoLand</h1>
+                <p class="tagline">Diagnósticos Online</p>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li><a href="diagnostic.html" class="nav-link">Diagnóstico</a></li>
+                    <li><a href="services.html" class="nav-link">Serviços</a></li>
+                    <li><a href="contact.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="index.html">Início</a> / <a href="diagnostic.html">Diagnóstico</a> / <span>Resultado</span>
+        </div>
+
+        <!-- Seção: Resultado do Diagnóstico -->
+        <section class="result-section">
+            <div class="container">
+                <div class="result-header">
+                    <h2>Resultado do Seu Diagnóstico</h2>
+                    <p class="timestamp" id="resultTime"></p>
+                </div>
+
+                <!-- Informações do Veículo -->
+                <div class="vehicle-info">
+                    <h3>Informações do Veículo</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Marca/Modelo:</span>
+                            <span class="info-value" id="vehicleInfo">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Problema Reportado:</span>
+                            <span class="info-value" id="problemInfo">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diagnóstico Principal -->
+                <div class="diagnosis-result">
+                    <h3 class="diagnosis-title">Análise Detalhada</h3>
+                    <div id="diagnosisContent" class="diagnosis-content">
+                        <!-- Preenchido por JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Soluções Recomendadas -->
+                <div class="solutions-section">
+                    <h3>Soluções Recomendadas</h3>
+                    <div class="solutions-grid" id="solutionsGrid">
+                        <!-- Preenchido por JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Próximos Passos -->
+                <div class="next-steps">
+                    <h3>Próximos Passos</h3>
+                    <ol class="steps-list">
+                        <li>
+                            <strong>Procure uma Oficina:</strong>
+                            Use nossa rede de oficinas confiáveis para obter orçamentos e reparar seu veículo.
+                        </li>
+                        <li>
+                            <strong>Consulte um Especialista:</strong>
+                            Nossos especialistas 24/7 podem ajudar a esclarecer dúvidas sobre o diagnóstico.
+                        </li>
+                        <li>
+                            <strong>Realize o Reparo:</strong>
+                            Siga as recomendações prioritárias para manter seu veículo em bom estado.
+                        </li>
+                        <li>
+                            <strong>Faça Manutenção Preventiva:</strong>
+                            Agende diagnósticos periódicos para evitar futuros problemas.
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Ações -->
+                <div class="result-actions">
+                    <a href="diagnostic.html" class="btn-secondary">Fazer Outro Diagnóstico</a>
+                    <a href="contact.html" class="btn-cta">Falar com Especialista</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Testimoniais -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">O que Nossos Clientes Dizem</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Excelente! Meu carro tinha um problema estranho, e o diagnóstico da AutoLand identificou em segundos. Economizei muito em reparos desnecessários."</p>
+                        <p class="testimonial-author">- Lucas M., São Paulo</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Super recomendo! Fácil de usar, rápido e o resultado foi 100% preciso. Já usei várias vezes para manutenção preventiva."</p>
+                        <p class="testimonial-author">- Ana P., Rio de Janeiro</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Adorei o suporte! Quando tive dúvida sobre o diagnóstico, os especialistas responderam rapidinho e tudo foi esclarecido."</p>
+                        <p class="testimonial-author">- Carlos R., Belo Horizonte</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 AutoLand - Diagnósticos Online. Todos os direitos reservados.</p>
+            <p class="footer-contact">Email: contato@autoland.com | WhatsApp: (11) 99999-9999</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/diagnostic.js"></script>
+    <script>
+        // Exibir resultado do diagnóstico
+        document.addEventListener('DOMContentLoaded', function() {
+            displayDiagnosisResult();
+        });
+    </script>
+</body>
+</html>

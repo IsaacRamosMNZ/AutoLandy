@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - AutoLand</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <header class="header">
+        <div class="container-header">
+            <div class="logo">
+                <h1>AutoLand</h1>
+                <p class="tagline">Diagnósticos Online</p>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="about.html" class="nav-link">Sobre</a></li>
+                    <li><a href="diagnostic.html" class="nav-link active">Diagnóstico</a></li>
+                    <li><a href="services.html" class="nav-link">Serviços</a></li>
+                    <li><a href="contact.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="index.html">Início</a> / <span>Diagnóstico</span>
+        </div>
+
+        <!-- Seção: Hero Diagnóstico -->
+        <section class="diagnostic-hero">
+            <div class="container">
+                <h2 class="section-title">Diagnóstico Online</h2>
+                <p class="diagnostic-subtitle">Descreva o problema do seu veículo e receba uma análise completa</p>
+            </div>
+        </section>
+
+        <!-- Seção: Formulário de Diagnóstico -->
+        <section class="diagnostic-section">
+            <div class="container">
+                <div class="diagnostic-form-wrapper">
+                    <h3 class="form-title">Qual é o problema?</h3>
+                    
+                    <form id="diagnosticForm" class="diagnostic-form">
+                        <!-- Marca/Modelo -->
+                        <div class="form-group">
+                            <label for="vehicleModel" class="form-label">Marca e Modelo do Veículo</label>
+                            <input 
+                                type="text" 
+                                id="vehicleModel" 
+                                name="vehicleModel" 
+                                class="form-input" 
+                                placeholder="Ex: Ford Fiesta 2015" 
+                                required
+                            >
+                            <span class="error-message" id="vehicleError"></span>
+                        </div>
+
+                        <!-- Problema/Sintoma -->
+                        <div class="form-group">
+                            <label for="problemDesc" class="form-label">Descreva o Problema</label>
+                            <textarea 
+                                id="problemDesc" 
+                                name="problemDesc" 
+                                class="form-input form-textarea" 
+                                placeholder="Ex: Carro não liga, luz amarela no painel, barulho estranho, etc..." 
+                                rows="4"
+                                required
+                            ></textarea>
+                            <span class="error-message" id="problemError"></span>
+                        </div>
+
+                        <!-- Quando começou -->
+                        <div class="form-group">
+                            <label for="whenStarted" class="form-label">Quando começou?</label>
+                            <select id="whenStarted" name="whenStarted" class="form-input" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="hoje">Hoje</option>
+                                <option value="semana">Esta semana</option>
+                                <option value="mes">Este mês</option>
+                                <option value="atrás">Há mais tempo</option>
+                            </select>
+                            <span class="error-message" id="whenError"></span>
+                        </div>
+
+                        <!-- Mensagem de sucesso -->
+                        <div class="success-message" id="diagnosisMessage"></div>
+
+                        <!-- Botão -->
+                        <button type="submit" class="btn-submit">Analisar Agora</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Problemas Comuns -->
+        <section class="common-problems-section">
+            <div class="container">
+                <h2 class="section-title">Problemas Comuns</h2>
+                <p class="section-subtitle">Clique em um problema para obter dicas rápidas</p>
+
+                <div class="problems-grid">
+                    <div class="problem-card" onclick="fillProblem('Carro não liga - possível problema de bateria')">
+                        <div class="problem-icon">🔋</div>
+                        <h3>Bateria Fraca</h3>
+                        <p>Carro não liga ou liga lentamente</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Motor faz barulho estranho - possível desgaste')">
+                        <div class="problem-icon">🔧</div>
+                        <h3>Motor Barulhento</h3>
+                        <p>Ruídos anormais do motor</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Luz de avaria acesa no painel')">
+                        <div class="problem-icon">⚠️</div>
+                        <h3>Luz de Avaria</h3>
+                        <p>Luz amarela no painel acesa</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Freios com problema - possível desgaste de pastilhas')">
+                        <div class="problem-icon">🛑</div>
+                        <h3>Problema de Freios</h3>
+                        <p>Freio mole, duro ou com barulho</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Direção pesada - possível problema da correia')">
+                        <div class="problem-icon">🚗</div>
+                        <h3>Direção Pesada</h3>
+                        <p>Dificuldade em virar o volante</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Óleo do motor vencido - necessário troca')">
+                        <div class="problem-icon">💧</div>
+                        <h3>Óleo Vencido</h3>
+                        <p>Troca de óleo em atraso</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Pneu furado ou calibrage errada')">
+                        <div class="problem-icon">🛞</div>
+                        <h3>Problema de Pneus</h3>
+                        <p>Pneu furado ou esvaziando</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Ar-condicionado não funciona - possível recarga de gás')">
+                        <div class="problem-icon">❄️</div>
+                        <h3>Ar-Condicionado</h3>
+                        <p>Ar não esfria ou não funciona</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Carro faz fumaça - problema sério de motor')">
+                        <div class="problem-icon">💨</div>
+                        <h3>Fumaça do Motor</h3>
+                        <p>Fumaça saindo do motor/capô</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Vazamento de líquido - necessário reparo urgente')">
+                        <div class="problem-icon">💦</div>
+                        <h3>Vazamento</h3>
+                        <p>Líquido vazando do carro</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Embreagem com problema - dificuldade ao engatar marcha')">
+                        <div class="problem-icon">⚙️</div>
+                        <h3>Problema de Embreagem</h3>
+                        <p>Dificuldade ao mudar de marcha</p>
+                    </div>
+
+                    <div class="problem-card" onclick="fillProblem('Bateria descarrega rapidamente - possível problema elétrico')">
+                        <div class="problem-icon">⚡</div>
+                        <h3>Bateria Descarrega</h3>
+                        <p>Bateria descarrega muito rápido</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 AutoLand - Diagnósticos Online. Todos os direitos reservados.</p>
+            <p class="footer-contact">Email: contato@autoland.com | WhatsApp: (11) 99999-9999</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/diagnostic.js"></script>
+</body>
+</html>
